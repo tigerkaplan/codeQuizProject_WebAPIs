@@ -26,13 +26,19 @@ displayQuestions();
 } 
 
 function displayQuestions () {
-  var currentQuizQuestion = quizQuestions[currentQuiz]
+  var currentQuizQuestion = quizQuestions[currentQuiz];
   var questionTitle = document.getElementById("question-title");
-  var questionChoices=document.getElementById("choices");
-  var userAnswer=document.getElementById("correct")
+
   questionTitle.textContent=currentQuizQuestion.question;
-  questionChoices.textContent=currentQuizQuestion.choices;
-  userAnswer=textContent=currentQuizQuestion.correct;
+currentQuizQuestion.choices.forEach(function(choice, i) {
+
+  var choiceBtn = document.createElement("button");
+choiceBtn.setAttribute("class", "choices");
+
+choiceBtn.setAttribute("value", choice);
+tex
+}
+) 
 
 }
 
