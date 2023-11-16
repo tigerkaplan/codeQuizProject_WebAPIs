@@ -65,10 +65,6 @@ const quizQuestions = [
     correct: "for (var i = 0; i < 5; i++)",
   },
   {
-    question: "What is the output of the following code: var x = 10; var y = '5'; console.log(x - y);",
-    correct: "5",
-  },
-  {
     question: "What is the difference between '==' and '===' operators in JavaScript?",
     choices: ["They are interchangeable", "'==' performs a strict comparison, while '===' performs a loose comparison", "'===' performs a strict comparison, while '==' performs a loose comparison", "They both perform the same type of comparison"],
     correct: "'===' performs a strict comparison, while '==' performs a loose comparison",

@@ -1,111 +1,112 @@
+const questionEl = document.getElementById ('questions');
+const choicesEl = document.getElementById ('choices');
+const submitBtn = document.getElementById ('submit');
+const startBtn = document.getElementById ('start');
+const result =document.getElementById("result")
+const timer = document.getElementById ('time');
+var timeEl;
+var time = quizQuestions.length;
 
-const questionEl = document.getElementById("questions");
-const choicesEl = document.getElementById("choices");
-const submitBtn = document.getElementById("submit");
-const startBtn = document.getElementById("start")
-const timer = document.getElementById("time")
-var timeEl; 
-var time=quizQuestions.length
-
-    //variables in use
+//variables in use
 let currentQuiz = 0;
 let score = 0;
 
+function loadQuiz () {
+  // grabs  id element startScreen
+  var startScreen = document.getElementById ('start-screen');
+  // hides start screen bey setting class attribute to hidden
+  startScreen.setAttribute ('class', 'hide');
+  // Display the quiz questions
+  questionEl.removeAttribute ('class', 'visible');
 
-function loadQuiz() {
-   // grabs  id element startScreen
-var startScreen = document.getElementById("start-screen")
-   // hides start screen bey setting class attribute to hidden
-startScreen.setAttribute("class", "hide");
-   // Display the quiz questions
-questionEl.removeAttribute("class", "visible");
+  timeEl = setInterval (startTimer, 10000);
 
-timeEl=setInterval(startTimer, 10000 )
-
-displayQuestions();
-} 
+  displayQuestions ();
+}
 
 function displayQuestions () {
   var currentQuizQuestion = quizQuestions[currentQuiz];
-  var questionTitle = document.getElementById("question-title");
+  var questionTitle = document.getElementById ('question-title');
 
-  questionTitle.textContent=currentQuizQuestion.question;
-currentQuizQuestion.choices.forEach(function(choice, i) {
+  questionTitle.textContent = currentQuizQuestion.question;
 
-  var choiceBtn = document.createElement("button");
-choiceBtn.setAttribute("class", "choices");
+  choicesEl.innerHTML = ""
+  currentQuizQuestion.choices.forEach (function (choice, i) {
+    var choiceBtn = document.createElement ('button');
+    choiceBtn.setAttribute ('class', 'choices');
+    choiceBtn.setAttribute ('value', choice);
+    choiceBtn.textContent = choice; // Set the text content of the button
+    choiceBtn.addEventListener ('click', checkAnswer);
+    // Append the button to the choices container
 
-choiceBtn.setAttribute("value", choice);
-tex
+    choicesEl.appendChild (choiceBtn);
+  });
 }
-) 
 
-}
-
-loadQuiz();
-
-
-// Add an event listener to the submit button to check the answer
-submitBtn.addEventListener("click", () => {
-  const answer = getSelected();
+function checkAnswer(event){
+  const answer = event.target.textContent
 
   if (answer) {
-    if (answer === currentQuiz.correct) {
+    if (answer === quizQuestions[currentQuiz].correct) {
       score++;
     }
     currentQuiz++;
-    if (currentQuiz < quizData.length) {
-      loadQuiz();
+    if (currentQuiz < quizQuestions.length) {
+      displayQuestions ();
     } else {
       // Display results or take appropriate action when the quiz is over
-      showResults();
+      showResults ();
     }
   }
-});
+}
+startBtn.addEventListener("click", loadQuiz)
 
+// Add an event listener to the submit button to check the answer
 
+function startTimer () {
+  let count = 60;
+  timer.textContent = count;
 
-function startTimer() {
-  let count = 60; // Set your desired countdown time
-  timer.textContent = count; // Display the initial time
-
-  const countdown = setInterval(() => {
+  const countdown = setInterval (() => {
     count--;
-    timer.textContent = time; // Update the timer display
+    timer.textContent = count;
 
     if (count <= 0) {
-      // Time's up, handle it as needed
-      clearInterval(countdown); // Stop the countdown
+      clearInterval (countdown);
     }
-  }, 1000); // Update the timer every second (1000 ms)
+  }, 1000);
 }
 
-
-function showResults() {
-// Implement displaying the quiz results and handling the end of the quiz
-// For example, you can show the user's score and provide an option to restart the quiz.
+function showResults () {
+  questionEl.setAttribute ('class', 'hide');
+result.textContent = "Your final score is " + score
+  // Implement displaying the quiz results and handling the end of the quiz
+  // For example, you can show the user's score and provide an option to restart the quiz.
 }
-function getSelected() {
-  const answerEls = document.querySelectorAll("input[type='radio'][name='answer']");
-  let answer = undefined
+function getSelected () {
+  const answerEls = document.querySelectorAll (
+    "input[type='radio'][name='answer']"
+  );
+  let answer = undefined;
 
-  answerEls.forEach((answerEl) => {
-  
+  answerEls.forEach (answerEl => {
     if (answerEl.checked) {
       answer = answerEl.id;
     }
   });
   return answer;
 }
-function deselectAnswers() {
-  const answerEls = document.querySelectorAll(".answer");
-  answerEls.forEach((answerEl) => {
+function deselectAnswers () {
+  const answerEls = document.querySelectorAll ('.answer');
+  answerEls.forEach (answerEl => {
     answerEl.checked = false;
   });
 }
 
-submitBtn.addEventListener("click", () => {
-  const selectedAnswer = document.querySelector("input[name='answer']:checked");
+submitBtn.addEventListener ('click', () => {
+  const selectedAnswer = document.querySelector (
+    "input[name='answer']:checked"
+  );
 
   if (selectedAnswer) {
     if (selectedAnswer.value === quizData[currentQuiz].correct) {
@@ -115,9 +116,9 @@ submitBtn.addEventListener("click", () => {
     currentQuiz++;
 
     if (currentQuiz < quizData.length) {
-      loadQuiz();
+      loadQuiz ();
     } else {
-      showResults();
+      showResults ();
     }
   }
-})
+});
