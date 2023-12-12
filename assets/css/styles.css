@@ -30,12 +30,14 @@ li {
   list-style: decimal inside none;
   align-items: start;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
   /* align-items: start;
   justify-content: left; */
 }
+
 li:nth-child(odd) {
   background-color: #f3edfc;
 }
@@ -43,6 +45,7 @@ li:nth-child(odd) {
 ul li {
   align-items: flex-start;
 }
+
 .wrapper {
   margin: 100px auto 0 auto;
   max-width: 600px;
@@ -61,6 +64,7 @@ ul li {
   top: 10px;
   left: 10px;
 }
+
 /* --------------------High Score HTML ------------- */
 
 .feedback {

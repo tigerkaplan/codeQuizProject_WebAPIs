@@ -2,7 +2,7 @@ const questionEl = document.getElementById ('questions');
 const choicesEl = document.getElementById ('choices');
 const submitBtn = document.getElementById ('submit');
 const startBtn = document.getElementById ('start');
-const result =document.getElementById("result")
+const result = document.getElementById ('result');
 const timer = document.getElementById ('time');
 var timeEl;
 var time = quizQuestions.length;
@@ -30,7 +30,7 @@ function displayQuestions () {
 
   questionTitle.textContent = currentQuizQuestion.question;
 
-  choicesEl.innerHTML = ""
+  choicesEl.innerHTML = '';
   currentQuizQuestion.choices.forEach (function (choice, i) {
     var choiceBtn = document.createElement ('button');
     choiceBtn.setAttribute ('class', 'choices');
@@ -43,8 +43,8 @@ function displayQuestions () {
   });
 }
 
-function checkAnswer(event){
-  const answer = event.target.textContent
+function checkAnswer (event) {
+  const answer = event.target.textContent;
 
   if (answer) {
     if (answer === quizQuestions[currentQuiz].correct) {
@@ -59,7 +59,7 @@ function checkAnswer(event){
     }
   }
 }
-startBtn.addEventListener("click", loadQuiz)
+startBtn.addEventListener ('click', loadQuiz);
 
 // Add an event listener to the submit button to check the answer
 
@@ -79,7 +79,7 @@ function startTimer () {
 
 function showResults () {
   questionEl.setAttribute ('class', 'hide');
-result.textContent = "Your final score is " + score
+  result.textContent = 'Your final score is ' + score;
   // Implement displaying the quiz results and handling the end of the quiz
   // For example, you can show the user's score and provide an option to restart the quiz.
 }
