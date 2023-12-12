@@ -119,9 +119,14 @@ button:hover {
   background-color: #8570a5;
 }
 
-.choices button {
-  display: block;
+#choices  {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  
 }
+
+
+
 
 /* --------------------Submit Button------------- */
