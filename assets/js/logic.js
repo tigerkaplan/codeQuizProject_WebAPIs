@@ -4,6 +4,9 @@ const submitBtn = document.getElementById ('submit');
 const startBtn = document.getElementById ('start');
 const result = document.getElementById ('result');
 const timer = document.getElementById ('time');
+const endScreen = document.getElementById ('end-screen');
+const initials = document.getElementById ('initials');
+
 var timeEl;
 var time = quizQuestions.length;
 
@@ -82,7 +85,11 @@ function showResults () {
   result.textContent = 'Your final score is ' + score;
   // Implement displaying the quiz results and handling the end of the quiz
   // For example, you can show the user's score and provide an option to restart the quiz.
+  endScreen.setAttribute ('class', '');
 }
+
+
+
 function getSelected () {
   const answerEls = document.querySelectorAll (
     "input[type='radio'][name='answer']"
@@ -104,21 +111,6 @@ function deselectAnswers () {
 }
 
 submitBtn.addEventListener ('click', () => {
-  const selectedAnswer = document.querySelector (
-    "input[name='answer']:checked"
-  );
+  localStorage.setItem ('', '');
 
-  if (selectedAnswer) {
-    if (selectedAnswer.value === quizData[currentQuiz].correct) {
-      score++;
-    }
-
-    currentQuiz++;
-
-    if (currentQuiz < quizData.length) {
-      loadQuiz ();
-    } else {
-      showResults ();
-    }
-  }
 });
