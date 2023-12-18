@@ -1,7 +1,7 @@
 const quizQuestions = [
   {
-    question: "What is the output of the following code: console.log(2 + '2');",
-    choices: ['4', '22', '4', '22'],
+    question: "What is the output of the following code: console.log (2 + '2');",
+    choices: ['44', '222', '4', '22'],
     correct: '22',
   },
   {
@@ -25,7 +25,7 @@ const quizQuestions = [
     correct: 'Not a number',
   },
   {
-    question: "What is the output of the following code: var x = 5; var y = '5'; console.log(x == y);",
+    question: "What is the output of the following code: var x = 5; var y = '5'; console.log (x == y);",
     choices: ['true', 'false', 'undefined', 'Error'],
     correct: 'true',
   },
@@ -45,12 +45,12 @@ const quizQuestions = [
     correct: 'The object that the function belongs to',
   },
   {
-    question: 'What is the output of the following code: var x = [1, 2, 3]; console.log(x.length);',
+    question: 'What is the output of the following code: var x = [1, 2, 3]; console.log (x.length);',
     choices: ['1', '2', '3', '4'],
     correct: '3',
   },
   {
-    question: 'What is the output of the following code: console.log(typeof NaN);',
+    question: 'What is the output of the following code: console.log (typeof NaN);',
     choices: ['number', 'string', 'undefined', 'NaN'],
     correct: 'number',
   },
@@ -65,7 +65,7 @@ const quizQuestions = [
     correct: 'Executes a function once for each element in an array',
   },
   {
-    question: 'What is the output of the following code: console.log(2 ** 3);',
+    question: 'What is the output of the following code: console.log (2 ** 3);',
     choices: ['5', '6', '8', '9'],
     correct: '8',
   },
