@@ -1,3 +1,4 @@
+//------------ Variable ------------
 const questionEl = document.getElementById("questions");
 const choicesEl = document.getElementById("choices");
 const submitBtn = document.getElementById("submit");
@@ -14,6 +15,7 @@ var time = quizQuestions.length;
 let currentQuiz = 0;
 let score = 0;
 
+//------------ Questions ------------
 function loadQuiz() {
   // grabs  id element startScreen
   var startScreen = document.getElementById("start-screen");
@@ -21,9 +23,7 @@ function loadQuiz() {
   startScreen.setAttribute("class", "hide");
   // Display the quiz questions
   questionEl.removeAttribute("class", "visible");
-
   timeEl = setInterval(startTimer, 10000);
-
   displayQuestions();
 }
 
@@ -66,27 +66,26 @@ startBtn.addEventListener("click", loadQuiz);
 
 // Add an event listener to the submit button to check the answer
 
-function startTimer() {
-  let count = 60;
-  timer.textContent = count;
+let count = 60;
 
+function startTimer() {
+  timer.textContent = count;
   const countdown = setInterval(() => {
     count--;
     timer.textContent = count;
-
     if (count <= 0) {
       clearInterval(countdown);
+       showResults(); 
     }
   }, 1000);
 }
-
+//------------ Results ------------
 function showResults() {
   questionEl.setAttribute("class", "hide");
   result.textContent = "Your final score is " + score;
   // Implement displaying the quiz results and handling the end of the quiz
-  // For example, you can show the user's score and provide an option to restart the quiz.
   endScreen.setAttribute("class", "");
-}
+
 
 function getSelected() {
   const answerEls = document.querySelectorAll(
@@ -110,4 +109,8 @@ function deselectAnswers() {
 
 submitBtn.addEventListener("click", () => {
   localStorage.setItem("initials.value", "score");
+  window.location.href = "highscores.html"
+  // submitBtn.setAttribute("href", "highscores.html");
+  console.log("hi")
 });
+}
