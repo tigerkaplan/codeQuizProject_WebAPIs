@@ -14,3 +14,10 @@ saveHighScore = (e) => {
   localStorage.setItem('highScores', JSON.stringify(highScores));
   window.location.assign('/');
 }
+
+function displayingScore () {
+  var hs1 = localStorage.getItem("he")
+  document.getElementById("hs").textContent = hs1;
+};
+
+displayingScore ();

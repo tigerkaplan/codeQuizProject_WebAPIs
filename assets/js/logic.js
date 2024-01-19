@@ -19,7 +19,7 @@ let score = 0;
 function loadQuiz() {
   // grabs  id element startScreen
   var startScreen = document.getElementById("start-screen");
-  // hides start screen bey setting class attribute to hidden
+  // hides start screen setting class attribute to hidden
   startScreen.setAttribute("class", "hide");
   // Display the quiz questions
   questionEl.removeAttribute("class", "visible");
@@ -75,7 +75,7 @@ function startTimer() {
     timer.textContent = count;
     if (count <= 0) {
       clearInterval(countdown);
-       showResults(); 
+      showResults();
     }
   }, 1000);
 }
@@ -86,31 +86,29 @@ function showResults() {
   // Implement displaying the quiz results and handling the end of the quiz
   endScreen.setAttribute("class", "");
 
+  function getSelected() {
+    const answerEls = document.querySelectorAll(
+      "input[type='radio'][name='answer']"
+    );
+    let answer = undefined;
 
-function getSelected() {
-  const answerEls = document.querySelectorAll(
-    "input[type='radio'][name='answer']"
-  );
-  let answer = undefined;
+    answerEls.forEach(answerEl => {
+      if (answerEl.checked) {
+        answer = answerEl.id;
+      }
+    });
+    return answer;
+  }
+  function deselectAnswers() {
+    const answerEls = document.querySelectorAll(".answer");
+    answerEls.forEach(answerEl => {
+      answerEl.checked = false;
+    });
+  }
 
-  answerEls.forEach(answerEl => {
-    if (answerEl.checked) {
-      answer = answerEl.id;
-    }
+  submitBtn.addEventListener("click", () => {
+    localStorage.setItem(initials.value, score);
+    window.location.href = "highscores.html";
+    console.log("hi");
   });
-  return answer;
-}
-function deselectAnswers() {
-  const answerEls = document.querySelectorAll(".answer");
-  answerEls.forEach(answerEl => {
-    answerEl.checked = false;
-  });
-}
-
-submitBtn.addEventListener("click", () => {
-  localStorage.setItem("initials.value", "score");
-  window.location.href = "highscores.html"
-  // submitBtn.setAttribute("href", "highscores.html");
-  console.log("hi")
-});
 }
