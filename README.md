@@ -1,41 +1,44 @@
+# 
+![Github license](https://img.shields.io/badge/license-MIT License-blue.svg)
 
-# Web APIs
-The project about using 101 Javascript element variables on different projects
+## Description
+The is project focused to JS and localization
 
+## Table of Contents
+* [Description](#description)
+* [Deployment](#deployment)
+* [Demo](#demo)
+* [Screenshot](#screenshot)
+* [Languages](#languages)
+* [Usage](#usage)
+* [Contributors](#contributors)
+* [Testing](#testing)
+* [Author](#author)
+* [Repository](#repository)
+* [Questions](#questions)
 
-## About the Project
-The project shows that  front-end developer's project work for on it. The project on how Javascript using on finances sector. 
-
-## Screenshots
-
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
-## Badges
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
-![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
-
-
-## Used By
-
-This project is used by 
-
-
-## Contributing
-
+## Deployment
+To deploy this project run ```node JS``
+## Demo
+https://tigerkaplan.github.io/codeQuizProject_WebAPIs/
+## Screenshot
+![Home] ( ./images/.Home.png )
+![QuizQuestions]  ( ./images/.QuizQuestions.png )
+![Initials]  (./images/Initials.png )
+![HighScores] (./images/HighScores.png)
+## Languages
+HTML, CSS, Bootstrap, and JavaScript
+## Usage
+This project can be used The project is focused on the creation and management of quiz questions, with a primary objective of storing and retrieving high scores using local storage. The main goals include designing a quiz system that enables users to answer questions, while also implementing functionality to persistently store and display the highest scores achieved by participants. This involves the utilization of local storage mechanisms to maintain a record of user performance, creating an interactive and engaging quiz experience.
+## Installation
+Install  with ```npm install``
+## Contributors
 Contributions are always welcome!
-
-
+## Tests
+n/a
+## Author
+[@tigerkaplan](https://github.com/tigerkaplan)
+## Repository
+https://github.com/tigerkaplan/codeQuizProject_WebAPIs
+## Questions
+Please send your questions [here](mailto:husniyeerparun@gmail.com?subject=[GitHub]%20Dev%20Connect) or visit [github/tigerkaplan](https://github.com/tigerkaplan) for my other projects on GitHub.
